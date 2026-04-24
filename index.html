@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mini Amazon</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🛒 MiniShop</h1>
+    <input type="text" id="search" placeholder="Search products..." onkeyup="searchProduct()">
+    <button onclick="toggleCart()">Cart (<span id="count">0</span>)</button>
+</header>
+
+<div class="filters">
+    <button onclick="filterCategory('all')">All</button>
+    <button onclick="filterCategory('electronics')">Electronics</button>
+    <button onclick="filterCategory('fashion')">Fashion</button>
+</div>
+
+<div id="products" class="grid"></div>
+
+<!-- CART -->
+<div id="cart" class="cart">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <h3>Total: ₹<span id="total">0</span></h3>
+    <button onclick="checkout()">Checkout</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
