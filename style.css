@@ -18,36 +18,30 @@ header input {
     padding: 8px;
 }
 
-/* FILTERS */
+/* FILTER */
 .filters {
+    background: white;
     padding: 10px;
-    background: #fff;
     text-align: center;
-}
-
-.filters button {
-    margin: 5px;
-    padding: 8px 15px;
-    cursor: pointer;
 }
 
 /* PRODUCTS */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 15px;
     padding: 20px;
 }
 
 .card {
     background: white;
-    padding: 10px;
     border-radius: 8px;
+    padding: 10px;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.03);
+    transform: scale(1.04);
 }
 
 .card img {
@@ -56,12 +50,25 @@ header input {
     object-fit: cover;
 }
 
+.rating {
+    color: orange;
+}
+
 .card button {
     width: 100%;
     padding: 8px;
-    background: #ff9900;
+    margin-top: 5px;
     border: none;
     cursor: pointer;
+}
+
+.add {
+    background: #ff9900;
+}
+
+.wish {
+    background: #ff4d4d;
+    color: white;
 }
 
 /* CART */
@@ -79,9 +86,4 @@ header input {
 
 .cart.active {
     right: 0;
-}
-
-.cart-item {
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
 }
