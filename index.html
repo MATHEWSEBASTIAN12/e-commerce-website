@@ -2,22 +2,24 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mini Amazon Pro</title>
+<title>Mini Amazon</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
     <h1>🛒 MiniShop</h1>
-    <input type="text" id="search" placeholder="Search products..." onkeyup="searchProduct()">
-    <button onclick="toggleCart()">🛒 (<span id="count">0</span>)</button>
+    <input type="text" placeholder="Search..." onkeyup="searchProduct(this.value)">
+    <button onclick="toggleCart()">Cart (<span id="count">0</span>)</button>
+    <button onclick="showOrders()">Orders</button>
 </header>
 
 <div class="filters">
     <button onclick="filterCategory('all')">All</button>
     <button onclick="filterCategory('electronics')">Electronics</button>
     <button onclick="filterCategory('fashion')">Fashion</button>
+    <button onclick="filterCategory('home')">Home</button>
+    <button onclick="filterCategory('accessories')">Accessories</button>
 </div>
 
 <div id="products" class="grid"></div>
@@ -28,6 +30,38 @@
     <div id="cartItems"></div>
     <h3>Total: ₹<span id="total">0</span></h3>
     <button onclick="checkout()">Checkout</button>
+</div>
+
+<!-- CHECKOUT -->
+<div id="checkout" class="modal">
+<div class="box">
+<h2>Checkout</h2>
+<input id="name" placeholder="Name"><br>
+<textarea id="address" placeholder="Address"></textarea><br>
+
+<select id="payment">
+<option value="cod">Cash on Delivery</option>
+<option value="online">Online Payment</option>
+</select>
+
+<select id="onlineMode" style="display:none;">
+<option>UPI</option>
+<option>Card</option>
+<option>Net Banking</option>
+</select>
+
+<button onclick="placeOrder()">Place Order</button>
+<button onclick="closeCheckout()">Cancel</button>
+</div>
+</div>
+
+<!-- ORDERS -->
+<div id="orders" class="modal">
+<div class="box">
+<h2>Your Orders</h2>
+<div id="orderList"></div>
+<button onclick="closeOrders()">Close</button>
+</div>
 </div>
 
 <script src="script.js"></script>
